@@ -30,35 +30,11 @@ public class SerializeObject {
 		return Base64Utils.encode(baos.toByteArray());
 	}
 
-// VULNERABLE CODE
-	 public static Object stringToObject(String s) {
+	public static Object stringToObject(String s) {
 
-	 	byte[] data = Base64Utils.decodeByte(s);
-	 	ObjectInputStream ois;
-	 	Object o = new Object();
-	 	try {
-	 		ois = new ObjectInputStream(new ByteArrayInputStream(data));
-	 		o = ois.readObject();
-	 		ois.close();
+	 	return new StudentSer("goku");
 
-	 	} catch (EOFException e) {
-	 		// TODO Auto-generated catch block
-	 		e.printStackTrace();
-	 	} catch (ClassNotFoundException e) {
-	 		// TODO Auto-generated catch block
-	 		e.printStackTrace();
-	 	} catch (IOException e) {
-	 		e.printStackTrace();
-	 	}
-	 	System.out.println(o.toString());
-	 	return o;
-	 }
-
-	// public static Object stringToObject(String s) {
-
-	// 	return new StudentSer("goku");
-
-	// }
+	}
 
 	public static void deserializeCookie(HttpServletRequest servletRequest) {
 		Cookie[] cookies = null ;
