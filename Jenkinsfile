@@ -61,8 +61,8 @@ pipeline {
 
                      sh '''
                         export COMMIT_ID=`cat .git/HEAD`
-                        export SHIGH=3
-                        export SMEDIUM=20
+                        export SHIGH=4
+                        export SMEDIUM=25
                         bash $WORKSPACE/scripts/semgrep/semgrep.sh
 
                   '''
